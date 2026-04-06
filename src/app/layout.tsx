@@ -13,21 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Naz's Renos | Premium Home Renovations",
+  title: "NAZ RENOVATIONS | No Jobs Too Big, No Issue Too Small",
   description:
-    "Transform your space with luxury home renovations. Kitchens, bathrooms, basements, and full home remodels crafted with precision and premium materials.",
+    "NAZ RENOVATIONS - House renovations, kitchen, bathroom, plumbing, electrical, painting, drywall, and more. Serving the Greater Toronto Area. Call (416) 912-1661.",
   keywords: [
     "home renovation",
-    "luxury remodel",
+    "house renovations",
     "kitchen renovation",
     "bathroom renovation",
-    "basement finishing",
-    "premium contractor",
+    "plumbing",
+    "electrical",
+    "painting",
+    "drywall",
+    "garage shelving",
+    "fence building",
+    "NAZ RENOVATIONS",
+    "Toronto contractor",
   ],
   openGraph: {
-    title: "Naz's Renos | Premium Home Renovations",
+    title: "NAZ RENOVATIONS | No Jobs Too Big, No Issue Too Small",
     description:
-      "Transform your space with luxury home renovations crafted with precision and premium materials.",
+      "NAZ RENOVATIONS - House renovations, kitchen, bathroom, plumbing, electrical, painting, drywall, and more. Call (416) 912-1661.",
     type: "website",
   },
 };

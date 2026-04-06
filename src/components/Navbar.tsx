@@ -71,10 +71,10 @@ export default function Navbar() {
               </div>
               <div>
                 <span className="text-lg font-semibold tracking-tight text-white">
-                  Naz&apos;s
+                  NAZ
                 </span>
                 <span className="text-lg font-semibold tracking-tight gradient-text ml-1">
-                  Renos
+                  RENOVATIONS
                 </span>
               </div>
             </a>

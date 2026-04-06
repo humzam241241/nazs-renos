@@ -113,7 +113,7 @@ export default function HeroCarousel() {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-6"
               >
-                Premium Renovations
+                No Jobs Too Big, No Issue Too Small
               </motion.p>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-white mb-6 whitespace-pre-line">
                 {slides[current].title}

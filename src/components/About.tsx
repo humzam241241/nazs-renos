@@ -35,10 +35,10 @@ export default function About() {
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <p className="text-lg text-dark-300 font-light leading-relaxed mb-6">
-                At Naz&apos;s Renos, we believe every home tells a story. For over 15
+                At NAZ RENOVATIONS, we believe every home tells a story. For over 15
                 years, we&apos;ve been crafting extraordinary living spaces that blend
-                timeless design with modern innovation. Our team of master
-                craftsmen, architects, and designers work together to transform
+                timeless design with modern innovation. Our team of skilled
+                tradespeople and designers work together to transform
                 your vision into reality.
               </p>
             </AnimatedSection>

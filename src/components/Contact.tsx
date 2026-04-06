@@ -23,8 +23,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Phone",
-    value: "(647) 555-RENO",
-    href: "tel:+16475557366",
+    value: "(416) 912-1661",
+    href: "tel:+14169121661",
   },
   {
     icon: (
@@ -44,8 +44,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "hello@nazsrenos.com",
-    href: "mailto:hello@nazsrenos.com",
+    value: "todaysrenovations786@gmail.com",
+    href: "mailto:todaysrenovations786@gmail.com",
   },
   {
     icon: (
@@ -267,23 +267,35 @@ export default function Contact() {
                         <option value="" className="bg-dark-900">
                           Select a service
                         </option>
-                        <option value="kitchen" className="bg-dark-900">
-                          Kitchen Renovation
+                        <option value="house-renovations" className="bg-dark-900">
+                          House Renovations
                         </option>
-                        <option value="bathroom" className="bg-dark-900">
-                          Bathroom Remodel
+                        <option value="kitchen-bathroom" className="bg-dark-900">
+                          Kitchen/Bathroom
                         </option>
-                        <option value="basement" className="bg-dark-900">
-                          Basement Finishing
+                        <option value="plumbing-electrical" className="bg-dark-900">
+                          Plumbing/Electrical
                         </option>
-                        <option value="interior" className="bg-dark-900">
-                          Interior Design
+                        <option value="painting" className="bg-dark-900">
+                          Painting
                         </option>
-                        <option value="custom" className="bg-dark-900">
-                          Custom Build
+                        <option value="garage-shelving" className="bg-dark-900">
+                          Garage Shelving
                         </option>
-                        <option value="full" className="bg-dark-900">
-                          Full Home Renovation
+                        <option value="shed-fence" className="bg-dark-900">
+                          Shed/Fence Building
+                        </option>
+                        <option value="moulding" className="bg-dark-900">
+                          Moulding
+                        </option>
+                        <option value="doors" className="bg-dark-900">
+                          Doors
+                        </option>
+                        <option value="drywall" className="bg-dark-900">
+                          Drywall Work
+                        </option>
+                        <option value="other" className="bg-dark-900">
+                          Other
                         </option>
                       </select>
                     </div>
@@ -309,7 +321,7 @@ export default function Contact() {
                     Send Message
                   </button>
                   <p className="text-xs text-dark-500 text-center">
-                    Free consultations for all projects over $10,000
+                    Free consultations &middot; No jobs too big, no issue too small
                   </p>
                 </form>
               )}
