@@ -55,7 +55,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a
@@ -80,7 +80,7 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -89,7 +89,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="px-4 py-2 text-sm font-medium text-dark-300 hover:text-white transition-colors duration-300 rounded-full hover:bg-white/5"
+                  className="px-5 py-2 text-sm font-medium text-dark-300 hover:text-white transition-colors duration-300 rounded-full hover:bg-white/5"
                 >
                   {link.label}
                 </a>
@@ -100,7 +100,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick("#contact");
                 }}
-                className="btn-apple ml-4 !py-2.5 !px-6 !text-sm"
+                className="btn-apple ml-6 !py-2.5 !px-6 !text-sm"
               >
                 Get a Quote
               </a>

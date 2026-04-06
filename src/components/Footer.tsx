@@ -65,7 +65,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/5 safe-area-bottom">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand */}
           <AnimatedSection className="col-span-2 md:col-span-1">

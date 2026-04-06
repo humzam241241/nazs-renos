@@ -103,82 +103,59 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 lg:py-40">
+    <section id="contact" className="relative py-32 lg:py-44">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/40 to-dark-950 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-20">
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16 lg:mb-24">
           <AnimatedSection>
-            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-5">
               Get in Touch
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
               Start Your <span className="gradient-text">Project</span>
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <p className="text-lg text-dark-400 max-w-2xl mx-auto font-light">
+            <p className="text-lg text-dark-400 max-w-xl mx-auto font-light leading-relaxed">
               Ready to transform your space? Get in touch for a free
               consultation and detailed quote tailored to your vision.
             </p>
           </AnimatedSection>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-8">
-          {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-8">
-            <AnimatedSection delay={0.2} direction="right">
-              <div className="space-y-6">
-                {contactInfo.map((info) => (
-                  <a
-                    key={info.label}
-                    href={info.href}
-                    className="flex items-start gap-4 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 group-hover:bg-gold-500/20 transition-colors duration-300">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <p className="text-sm text-dark-400 mb-0.5">
-                        {info.label}
-                      </p>
-                      <p className="text-white font-medium group-hover:text-gold-300 transition-colors duration-300">
-                        {info.value}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.3} direction="right">
-              <div className="glass rounded-2xl p-8 mt-8">
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  Business Hours
-                </h3>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between text-dark-300">
-                    <span>Monday - Friday</span>
-                    <span className="text-white">8:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between text-dark-300">
-                    <span>Saturday</span>
-                    <span className="text-white">9:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between text-dark-300">
-                    <span>Sunday</span>
-                    <span className="text-gold-400">By Appointment</span>
-                  </div>
+        {/* Contact Info Cards - horizontal row */}
+        <div className="grid sm:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-20">
+          {contactInfo.map((info, i) => (
+            <AnimatedSection key={info.label} delay={0.2 + i * 0.1}>
+              <a
+                href={info.href}
+                className="glass rounded-2xl p-7 lg:p-8 flex items-center gap-5 group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] h-full"
+              >
+                <div className="w-13 h-13 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 group-hover:bg-gold-500/20 transition-colors duration-300" style={{ width: '52px', height: '52px' }}>
+                  {info.icon}
                 </div>
-              </div>
+                <div>
+                  <p className="text-sm text-dark-500 mb-1">
+                    {info.label}
+                  </p>
+                  <p className="text-white font-medium group-hover:text-gold-300 transition-colors duration-300">
+                    {info.value}
+                  </p>
+                </div>
+              </a>
             </AnimatedSection>
-          </div>
+          ))}
+        </div>
 
-          {/* Contact Form */}
-          <AnimatedSection delay={0.3} className="lg:col-span-3">
-            <div className="glass rounded-3xl p-8 md:p-10">
+        {/* Two-column layout: Form + Business Hours */}
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
+          {/* Contact Form - takes 2/3 */}
+          <AnimatedSection delay={0.3} className="lg:col-span-2">
+            <div className="glass rounded-3xl p-8 md:p-10 lg:p-12">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -208,10 +185,10 @@ export default function Contact() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid md:grid-cols-2 gap-5">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm text-dark-300 mb-2 font-medium">
+                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                         Full Name
                       </label>
                       <input
@@ -225,7 +202,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-dark-300 mb-2 font-medium">
+                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                         Email
                       </label>
                       <input
@@ -239,9 +216,9 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-5">
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm text-dark-300 mb-2 font-medium">
+                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                         Phone
                       </label>
                       <input
@@ -254,7 +231,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-dark-300 mb-2 font-medium">
+                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                         Service Needed
                       </label>
                       <select
@@ -301,7 +278,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm text-dark-300 mb-2 font-medium">
+                    <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                       Project Details
                     </label>
                     <textarea
@@ -314,19 +291,70 @@ export default function Contact() {
                       placeholder="Tell us about your renovation vision, timeline, and budget range..."
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="btn-apple btn-apple-filled w-full !py-4 !text-base"
-                  >
-                    Send Message
-                  </button>
-                  <p className="text-xs text-dark-500 text-center">
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      className="btn-apple btn-apple-filled w-full !py-4 !text-base"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                  <p className="text-xs text-dark-500 text-center pt-1">
                     Free consultations &middot; No jobs too big, no issue too small
                   </p>
                 </form>
               )}
             </div>
           </AnimatedSection>
+
+          {/* Sidebar - Business Hours + CTA */}
+          <div className="flex flex-col gap-8">
+            <AnimatedSection delay={0.4} direction="right">
+              <div className="glass rounded-2xl p-8 lg:p-9">
+                <h3 className="text-lg font-semibold text-white mb-6">
+                  Business Hours
+                </h3>
+                <div className="space-y-4 text-sm">
+                  <div className="flex justify-between text-dark-300">
+                    <span>Monday - Friday</span>
+                    <span className="text-white font-medium">8:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="w-full h-px bg-white/5" />
+                  <div className="flex justify-between text-dark-300">
+                    <span>Saturday</span>
+                    <span className="text-white font-medium">9:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="w-full h-px bg-white/5" />
+                  <div className="flex justify-between text-dark-300">
+                    <span>Sunday</span>
+                    <span className="text-gold-400 font-medium">By Appointment</span>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.5} direction="right">
+              <div className="glass rounded-2xl p-8 lg:p-9 border-gold-500/10">
+                <div className="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  Free Estimates
+                </h3>
+                <p className="text-sm text-dark-400 leading-relaxed mb-6">
+                  Every project starts with a free, no-obligation consultation. We&apos;ll assess your space and provide a detailed quote.
+                </p>
+                <a
+                  href="tel:+14169121661"
+                  className="btn-apple w-full text-center !py-3 !text-sm"
+                >
+                  Call Now
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>

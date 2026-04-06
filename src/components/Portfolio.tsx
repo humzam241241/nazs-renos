@@ -69,7 +69,7 @@ function CarouselRow({
 export default function Portfolio() {
   return (
     <section id="portfolio" className="relative py-32 lg:py-40 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 mb-16">
         <div className="text-center">
           <AnimatedSection>
             <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
