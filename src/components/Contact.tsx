@@ -220,7 +220,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-sm"
+                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
                         placeholder="John Smith"
                       />
                     </div>
@@ -234,7 +234,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-sm"
+                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -249,7 +249,7 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-sm"
+                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
                         placeholder="(647) 555-0000"
                       />
                     </div>
@@ -262,7 +262,7 @@ export default function Contact() {
                         value={formData.service}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-sm appearance-none cursor-pointer"
+                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base appearance-none cursor-pointer"
                       >
                         <option value="" className="bg-dark-900">
                           Select a service
@@ -310,7 +310,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-sm resize-none"
+                      className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base resize-none"
                       placeholder="Tell us about your renovation vision, timeline, and budget range..."
                     />
                   </div>

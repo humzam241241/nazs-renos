@@ -64,7 +64,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/5">
+    <footer className="relative border-t border-white/5 safe-area-bottom">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand */}
@@ -118,12 +118,12 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-4">
               Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300"
+                    className="text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300 inline-flex items-center py-2"
                   >
                     {link.label}
                   </a>
@@ -137,12 +137,12 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-4">
               Company
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300"
+                    className="text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300 inline-flex items-center py-2"
                   >
                     {link.label}
                   </a>
@@ -156,12 +156,12 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white tracking-wide uppercase mb-4">
               Legal
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300"
+                    className="text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300 inline-flex items-center py-2"
                   >
                     {link.label}
                   </a>

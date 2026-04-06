@@ -130,18 +130,20 @@ export default function Testimonials() {
             </div>
 
             {/* Navigation Dots */}
-            <div className="flex justify-center gap-3 mt-8">
+            <div className="flex justify-center gap-1 mt-8">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${
+                  className="flex items-center justify-center w-11 h-11"
+                  aria-label={`View testimonial ${i + 1}`}
+                >
+                  <span className={`block w-2.5 h-2.5 rounded-full transition-all duration-500 ${
                     i === current
                       ? "bg-gold-400 scale-125"
-                      : "bg-white/15 hover:bg-white/30"
-                  }`}
-                  aria-label={`View testimonial ${i + 1}`}
-                />
+                      : "bg-white/15"
+                  }`} />
+                </button>
               ))}
             </div>
           </div>

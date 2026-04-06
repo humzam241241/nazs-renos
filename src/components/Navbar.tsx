@@ -49,7 +49,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 safe-area-top ${
           scrolled
             ? "glass-strong shadow-[0_1px_40px_rgba(0,0,0,0.3)]"
             : "bg-transparent"
@@ -109,7 +109,7 @@ export default function Navbar() {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`lg:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5 ${
+              className={`lg:hidden relative z-10 w-11 h-11 flex flex-col items-center justify-center gap-1.5 ${
                 isOpen ? "hamburger-open" : ""
               }`}
               aria-label="Toggle menu"
@@ -147,7 +147,8 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-dark-900/95 backdrop-blur-2xl border-l border-white/5"
+              className="absolute right-0 top-0 bottom-0 w-full max-w-sm h-dvh bg-dark-900/95 backdrop-blur-2xl border-l border-white/5 safe-area-top safe-area-bottom"
+              style={{ WebkitOverflowScrolling: "touch" }}
             >
               <div className="flex flex-col justify-center h-full px-8">
                 <nav className="flex flex-col gap-2">
@@ -166,7 +167,7 @@ export default function Navbar() {
                         duration: 0.5,
                         ease: [0.16, 1, 0.3, 1],
                       }}
-                      className="text-3xl font-light text-dark-300 hover:text-white transition-colors duration-300 py-3 border-b border-white/5"
+                      className="text-3xl font-light text-dark-300 hover:text-white transition-colors duration-300 py-4 border-b border-white/5"
                     >
                       {link.label}
                     </motion.a>

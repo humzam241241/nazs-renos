@@ -65,7 +65,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
+    <section id="home" className="relative h-dvh w-full overflow-hidden">
       {/* Carousel Images */}
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <motion.div
@@ -88,7 +88,7 @@ export default function HeroCarousel() {
             fill
             className="object-cover"
             priority={current === 0}
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
           />
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-dark-950/60 via-dark-950/40 to-dark-950/90" />
@@ -135,7 +135,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -143,18 +143,20 @@ export default function HeroCarousel() {
               setDirection(i > current ? 1 : -1);
               setCurrent(i);
             }}
-            className={`relative h-1.5 rounded-full transition-all duration-500 ${
-              i === current ? "w-12 bg-gold-400" : "w-6 bg-white/20 hover:bg-white/40"
-            }`}
+            className="relative flex items-center justify-center h-11 w-11 p-0"
             aria-label={`Go to slide ${i + 1}`}
           >
-            {i === current && (
-              <motion.div
-                layoutId="hero-indicator"
-                className="absolute inset-0 rounded-full bg-gold-400"
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              />
-            )}
+            <span className={`block rounded-full transition-all duration-500 h-1.5 ${
+              i === current ? "w-10 bg-gold-400" : "w-6 bg-white/20"
+            }`}>
+              {i === current && (
+                <motion.span
+                  layoutId="hero-indicator"
+                  className="block w-full h-full rounded-full bg-gold-400"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+            </span>
           </button>
         ))}
       </div>
