@@ -7,7 +7,7 @@ import AnimatedSection from "./AnimatedSection";
 const testimonials = [
   {
     quote:
-      "NAZ RENOVATIONS transformed our dated kitchen into a stunning modern masterpiece. The attention to detail was extraordinary -- from the custom millwork to the hidden lighting. We couldn't be happier.",
+      "NAZ SOLUTIONS transformed our dated kitchen into a stunning modern masterpiece. The attention to detail was extraordinary -- from the custom millwork to the hidden lighting. We couldn't be happier.",
     name: "Sarah & Michael Thompson",
     role: "Kitchen Renovation, Oakville",
     rating: 5,

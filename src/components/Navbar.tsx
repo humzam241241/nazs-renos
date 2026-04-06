@@ -74,7 +74,7 @@ export default function Navbar() {
                   NAZ
                 </span>
                 <span className="text-lg font-semibold tracking-tight gradient-text ml-1">
-                  RENOVATIONS
+                  SOLUTIONS
                 </span>
               </div>
             </a>

@@ -35,7 +35,7 @@ export default function About() {
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <p className="text-lg text-dark-300 font-light leading-relaxed mb-6">
-                At NAZ RENOVATIONS, we believe every home tells a story. For over 15
+                At NAZ SOLUTIONS, we believe every home tells a story. For over 15
                 years, we&apos;ve been crafting extraordinary living spaces that blend
                 timeless design with modern innovation. Our team of skilled
                 tradespeople and designers work together to transform

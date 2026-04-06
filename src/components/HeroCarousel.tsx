@@ -17,7 +17,7 @@ const slides = [
   },
   {
     image: "https://picsum.photos/id/259/1920/1080",
-    title: "Complete Home\nRenovations",
+    title: "Complete Home\nSolutions",
     subtitle: "Transforming visions into architectural masterpieces",
   },
   {

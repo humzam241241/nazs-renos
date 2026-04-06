@@ -4,7 +4,7 @@ import AnimatedSection from "./AnimatedSection";
 
 const footerLinks = {
   services: [
-    { label: "House Renovations", href: "#services" },
+    { label: "House Solutions", href: "#services" },
     { label: "Kitchen/Bathroom", href: "#services" },
     { label: "Plumbing/Electrical", href: "#services" },
     { label: "Painting", href: "#services" },
@@ -78,7 +78,7 @@ export default function Footer() {
                   NAZ
                 </span>
                 <span className="text-lg font-semibold gradient-text ml-1">
-                  RENOVATIONS
+                  SOLUTIONS
                 </span>
               </div>
             </div>
@@ -92,11 +92,11 @@ export default function Footer() {
                 </svg>
                 (416) 912-1661
               </a>
-              <a href="mailto:todaysrenovations786@gmail.com" className="flex items-center gap-2 text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300">
+              <a href="mailto:todayssolutions786@gmail.com" className="flex items-center gap-2 text-sm text-dark-400 hover:text-gold-300 transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                 </svg>
-                todaysrenovations786@gmail.com
+                todayssolutions786@gmail.com
               </a>
             </div>
             <div className="flex gap-3">
@@ -174,7 +174,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-dark-500">
-            &copy; {new Date().getFullYear()} NAZ RENOVATIONS. All rights reserved.
+            &copy; {new Date().getFullYear()} NAZ SOLUTIONS. All rights reserved.
           </p>
           <p className="text-xs text-dark-500">
             Proudly serving the Greater Toronto Area

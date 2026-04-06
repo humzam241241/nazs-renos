@@ -21,12 +21,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "NAZ RENOVATIONS | No Jobs Too Big, No Issue Too Small",
+  title: "NAZ SOLUTIONS | No Jobs Too Big, No Issue Too Small",
   description:
-    "NAZ RENOVATIONS - House renovations, kitchen, bathroom, plumbing, electrical, painting, drywall, and more. Serving the Greater Toronto Area. Call (416) 912-1661.",
+    "NAZ SOLUTIONS - House solutions, kitchen, bathroom, plumbing, electrical, painting, drywall, and more. Serving the Greater Toronto Area. Call (416) 912-1661.",
   keywords: [
     "home renovation",
-    "house renovations",
+    "house solutions",
     "kitchen renovation",
     "bathroom renovation",
     "plumbing",
@@ -35,18 +35,18 @@ export const metadata: Metadata = {
     "drywall",
     "garage shelving",
     "fence building",
-    "NAZ RENOVATIONS",
+    "NAZ SOLUTIONS",
     "Toronto contractor",
   ],
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "NAZ RENOVATIONS",
+    title: "NAZ SOLUTIONS",
   },
   openGraph: {
-    title: "NAZ RENOVATIONS | No Jobs Too Big, No Issue Too Small",
+    title: "NAZ SOLUTIONS | No Jobs Too Big, No Issue Too Small",
     description:
-      "NAZ RENOVATIONS - House renovations, kitchen, bathroom, plumbing, electrical, painting, drywall, and more. Call (416) 912-1661.",
+      "NAZ SOLUTIONS - House solutions, kitchen, bathroom, plumbing, electrical, painting, drywall, and more. Call (416) 912-1661.",
     type: "website",
   },
 };

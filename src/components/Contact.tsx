@@ -44,8 +44,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "todaysrenovations786@gmail.com",
-    href: "mailto:todaysrenovations786@gmail.com",
+    value: "todayssolutions786@gmail.com",
+    href: "mailto:todayssolutions786@gmail.com",
   },
   {
     icon: (
@@ -267,8 +267,8 @@ export default function Contact() {
                         <option value="" className="bg-dark-900">
                           Select a service
                         </option>
-                        <option value="house-renovations" className="bg-dark-900">
-                          House Renovations
+                        <option value="house-solutions" className="bg-dark-900">
+                          House Solutions
                         </option>
                         <option value="kitchen-bathroom" className="bg-dark-900">
                           Kitchen/Bathroom
