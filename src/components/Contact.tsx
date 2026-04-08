@@ -106,7 +106,7 @@ export default function Contact() {
     <section id="contact" className="relative py-44 lg:py-56">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/40 to-dark-950 pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-20 lg:mb-28">
           <AnimatedSection>
@@ -127,19 +127,19 @@ export default function Contact() {
           </AnimatedSection>
         </div>
 
-        {/* Contact Info Cards - horizontal row */}
-        <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-20 lg:mb-28">
+        {/* Contact Info Cards */}
+        <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {contactInfo.map((info, i) => (
             <AnimatedSection key={info.label} delay={0.2 + i * 0.1}>
               <a
                 href={info.href}
-                className="glass rounded-2xl p-7 lg:p-8 flex items-center gap-5 group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] h-full"
+                className="glass rounded-2xl p-8 flex flex-col items-center text-center gap-4 group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] h-full"
               >
-                <div className="w-13 h-13 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 group-hover:bg-gold-500/20 transition-colors duration-300" style={{ width: '52px', height: '52px' }}>
+                <div className="w-14 h-14 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 group-hover:bg-gold-500/20 transition-colors duration-300">
                   {info.icon}
                 </div>
                 <div>
-                  <p className="text-sm text-dark-500 mb-1">
+                  <p className="text-xs text-dark-500 uppercase tracking-wider mb-1">
                     {info.label}
                   </p>
                   <p className="text-white font-medium group-hover:text-gold-300 transition-colors duration-300">
@@ -151,211 +151,190 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* Two-column layout: Form + Business Hours */}
-        <div className="grid lg:grid-cols-3 gap-10 lg:gap-14">
-          {/* Contact Form - takes 2/3 */}
-          <AnimatedSection delay={0.3} className="lg:col-span-2">
-            <div className="glass rounded-3xl p-8 md:p-12 lg:p-14">
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center py-16 text-center"
-                >
-                  <div className="w-16 h-16 rounded-full bg-gold-500/20 flex items-center justify-center mb-6">
-                    <svg
-                      className="w-8 h-8 text-gold-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m4.5 12.75 6 6 9-13.5"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-semibold text-white mb-2">
-                    Message Sent!
-                  </h3>
-                  <p className="text-dark-400">
-                    We&apos;ll get back to you within 24 hours.
-                  </p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-8">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
-                        placeholder="John Smith"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
-                        placeholder="(647) 555-0000"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm text-dark-300 mb-2.5 font-medium">
-                        Service Needed
-                      </label>
-                      <select
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base appearance-none cursor-pointer"
-                      >
-                        <option value="" className="bg-dark-900">
-                          Select a service
-                        </option>
-                        <option value="house-solutions" className="bg-dark-900">
-                          House Solutions
-                        </option>
-                        <option value="kitchen-bathroom" className="bg-dark-900">
-                          Kitchen/Bathroom
-                        </option>
-                        <option value="plumbing-electrical" className="bg-dark-900">
-                          Plumbing/Electrical
-                        </option>
-                        <option value="painting" className="bg-dark-900">
-                          Painting
-                        </option>
-                        <option value="garage-shelving" className="bg-dark-900">
-                          Garage Shelving
-                        </option>
-                        <option value="shed-fence" className="bg-dark-900">
-                          Shed/Fence Building
-                        </option>
-                        <option value="moulding" className="bg-dark-900">
-                          Moulding
-                        </option>
-                        <option value="doors" className="bg-dark-900">
-                          Doors
-                        </option>
-                        <option value="drywall" className="bg-dark-900">
-                          Drywall Work
-                        </option>
-                        <option value="other" className="bg-dark-900">
-                          Other
-                        </option>
-                      </select>
-                    </div>
-                  </div>
+        {/* Contact Form - full width card */}
+        <AnimatedSection delay={0.3}>
+          <div className="glass rounded-3xl p-10 md:p-14 lg:p-16 border border-white/[0.08]">
+            <h3 className="text-2xl font-semibold text-white mb-2 text-center">Send Us a Message</h3>
+            <p className="text-dark-400 text-center mb-10">We&apos;ll respond within 24 hours</p>
+
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex flex-col items-center justify-center py-20 text-center"
+              >
+                <div className="w-20 h-20 rounded-full bg-gold-500/20 flex items-center justify-center mb-8">
+                  <svg
+                    className="w-10 h-10 text-gold-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m4.5 12.75 6 6 9-13.5"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-3">
+                  Message Sent!
+                </h3>
+                <p className="text-dark-400">
+                  We&apos;ll get back to you within 24 hours.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <label className="block text-sm text-dark-300 mb-2.5 font-medium">
-                      Project Details
+                    <label className="block text-sm text-dark-300 mb-3 font-medium">
+                      Full Name
                     </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       required
-                      rows={5}
-                      className="w-full px-4 py-3.5 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base resize-none"
-                      placeholder="Tell us about your renovation vision, timeline, and budget range..."
+                      className="w-full px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
+                      placeholder="John Smith"
                     />
                   </div>
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      className="btn-apple btn-apple-filled w-full !py-4 !text-base"
-                    >
-                      Send Message
-                    </button>
+                  <div>
+                    <label className="block text-sm text-dark-300 mb-3 font-medium">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
+                      placeholder="john@example.com"
+                    />
                   </div>
-                  <p className="text-xs text-dark-500 text-center pt-1">
-                    Free consultations &middot; No jobs too big, no issue too small
-                  </p>
-                </form>
-              )}
+                </div>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <label className="block text-sm text-dark-300 mb-3 font-medium">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base"
+                      placeholder="(647) 555-0000"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-dark-300 mb-3 font-medium">
+                      Service Needed
+                    </label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-white focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base appearance-none cursor-pointer"
+                    >
+                      <option value="" className="bg-dark-900">Select a service</option>
+                      <option value="house-solutions" className="bg-dark-900">House Solutions</option>
+                      <option value="kitchen-bathroom" className="bg-dark-900">Kitchen/Bathroom</option>
+                      <option value="plumbing-electrical" className="bg-dark-900">Plumbing/Electrical</option>
+                      <option value="painting" className="bg-dark-900">Painting</option>
+                      <option value="garage-shelving" className="bg-dark-900">Garage Shelving</option>
+                      <option value="shed-fence" className="bg-dark-900">Shed/Fence Building</option>
+                      <option value="moulding" className="bg-dark-900">Moulding</option>
+                      <option value="doors" className="bg-dark-900">Doors</option>
+                      <option value="drywall" className="bg-dark-900">Drywall Work</option>
+                      <option value="other" className="bg-dark-900">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm text-dark-300 mb-3 font-medium">
+                    Project Details
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full px-5 py-4 bg-white/[0.04] border border-white/10 rounded-xl text-white placeholder-dark-500 focus:outline-none focus:border-gold-500/40 focus:bg-white/[0.06] transition-all duration-300 text-base resize-none"
+                    placeholder="Tell us about your renovation vision, timeline, and budget range..."
+                  />
+                </div>
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    className="btn-apple btn-apple-filled w-full !py-4.5 !text-base"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </AnimatedSection>
+
+        {/* Business Hours + Free Estimates - side by side below form */}
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+          <AnimatedSection delay={0.4}>
+            <div className="glass rounded-2xl p-10 h-full">
+              <h3 className="text-xl font-semibold text-white mb-8">
+                Business Hours
+              </h3>
+              <div className="space-y-5 text-sm">
+                <div className="flex justify-between text-dark-300">
+                  <span>Monday - Friday</span>
+                  <span className="text-white font-medium">8:00 AM - 6:00 PM</span>
+                </div>
+                <div className="w-full h-px bg-white/5" />
+                <div className="flex justify-between text-dark-300">
+                  <span>Saturday</span>
+                  <span className="text-white font-medium">9:00 AM - 4:00 PM</span>
+                </div>
+                <div className="w-full h-px bg-white/5" />
+                <div className="flex justify-between text-dark-300">
+                  <span>Sunday</span>
+                  <span className="text-gold-400 font-medium">By Appointment</span>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
 
-          {/* Sidebar - Business Hours + CTA */}
-          <div className="flex flex-col gap-10">
-            <AnimatedSection delay={0.4} direction="right">
-              <div className="glass rounded-2xl p-8 lg:p-9">
-                <h3 className="text-lg font-semibold text-white mb-6">
-                  Business Hours
-                </h3>
-                <div className="space-y-4 text-sm">
-                  <div className="flex justify-between text-dark-300">
-                    <span>Monday - Friday</span>
-                    <span className="text-white font-medium">8:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="w-full h-px bg-white/5" />
-                  <div className="flex justify-between text-dark-300">
-                    <span>Saturday</span>
-                    <span className="text-white font-medium">9:00 AM - 4:00 PM</span>
-                  </div>
-                  <div className="w-full h-px bg-white/5" />
-                  <div className="flex justify-between text-dark-300">
-                    <span>Sunday</span>
-                    <span className="text-gold-400 font-medium">By Appointment</span>
-                  </div>
-                </div>
+          <AnimatedSection delay={0.5}>
+            <div className="glass rounded-2xl p-10 border-gold-500/10 h-full flex flex-col">
+              <div className="w-14 h-14 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-7 h-7">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
+                </svg>
               </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.5} direction="right">
-              <div className="glass rounded-2xl p-8 lg:p-9 border-gold-500/10">
-                <div className="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  Free Estimates
-                </h3>
-                <p className="text-sm text-dark-400 leading-relaxed mb-6">
-                  Every project starts with a free, no-obligation consultation. We&apos;ll assess your space and provide a detailed quote.
-                </p>
-                <a
-                  href="tel:+14169121661"
-                  className="btn-apple w-full text-center !py-3 !text-sm"
-                >
-                  Call Now
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                Free Estimates
+              </h3>
+              <p className="text-dark-400 leading-relaxed mb-8 flex-1">
+                Every project starts with a free, no-obligation consultation. We&apos;ll assess your space and provide a detailed quote.
+              </p>
+              <a
+                href="tel:+14169121661"
+                className="btn-apple w-full text-center"
+              >
+                Call Now
+              </a>
+            </div>
+          </AnimatedSection>
         </div>
+
+        <p className="text-xs text-dark-500 text-center mt-10">
+          Free consultations &middot; No jobs too big, no issue too small
+        </p>
       </div>
     </section>
   );

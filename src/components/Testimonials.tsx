@@ -37,7 +37,7 @@ const testimonials = [
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 justify-center">
       {[...Array(rating)].map((_, i) => (
         <svg
           key={i}

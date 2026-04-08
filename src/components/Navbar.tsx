@@ -35,9 +35,10 @@ export default function Navbar() {
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
 
-    // Map full page scroll to frame number
+    // Map first 30% of page scroll to all 60 frames (faster animation)
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.max(0, Math.min(1, window.scrollY / scrollHeight));
+    const rawProgress = window.scrollY / scrollHeight;
+    const progress = Math.max(0, Math.min(1, rawProgress / 0.3));
     const frame = Math.max(1, Math.min(TOTAL_FRAMES, Math.ceil(progress * TOTAL_FRAMES)));
     if (frame !== frameRef.current) {
       frameRef.current = frame;

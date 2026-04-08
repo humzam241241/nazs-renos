@@ -134,19 +134,27 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, i) => (
-            <AnimatedSection key={service.title} delay={0.1 + i * 0.08} className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]">
-              <div className="glass rounded-2xl p-8 lg:p-9 h-full group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] cursor-default">
-                <div className="w-14 h-14 rounded-2xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 group-hover:bg-gold-500/15 transition-all duration-500">
-                  {service.icon}
+            <AnimatedSection
+              key={service.title}
+              delay={0.1 + i * 0.08}
+              className={i === services.length - 1 ? "md:col-start-1 md:col-end-3 md:max-w-[calc(50%-16px)] md:mx-auto lg:col-start-2 lg:col-end-3 lg:max-w-none" : ""}
+            >
+              <div className="glass rounded-2xl p-8 lg:p-10 h-full group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] cursor-default relative overflow-hidden">
+                {/* Subtle gold glow on hover */}
+                <div className="absolute -top-12 -right-12 w-32 h-32 bg-gold-500/0 group-hover:bg-gold-500/[0.06] rounded-full blur-2xl transition-all duration-700" />
+                <div className="relative">
+                  <div className="w-14 h-14 rounded-2xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 group-hover:bg-gold-500/15 transition-all duration-500">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-gold-100 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-dark-400 font-light leading-relaxed text-[15px]">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-gold-100 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-dark-400 font-light leading-relaxed text-[15px]">
-                  {service.description}
-                </p>
               </div>
             </AnimatedSection>
           ))}
