@@ -103,12 +103,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32 lg:py-44">
+    <section id="contact" className="relative py-44 lg:py-56">
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/40 to-dark-950 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-20 lg:mb-28">
           <AnimatedSection>
             <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-5">
               Get in Touch
@@ -128,7 +128,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Info Cards - horizontal row */}
-        <div className="grid sm:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-20">
+        <div className="grid sm:grid-cols-3 gap-6 lg:gap-8 mb-20 lg:mb-28">
           {contactInfo.map((info, i) => (
             <AnimatedSection key={info.label} delay={0.2 + i * 0.1}>
               <a
@@ -152,10 +152,10 @@ export default function Contact() {
         </div>
 
         {/* Two-column layout: Form + Business Hours */}
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid lg:grid-cols-3 gap-10 lg:gap-14">
           {/* Contact Form - takes 2/3 */}
           <AnimatedSection delay={0.3} className="lg:col-span-2">
-            <div className="glass rounded-3xl p-8 md:p-10 lg:p-12">
+            <div className="glass rounded-3xl p-8 md:p-12 lg:p-14">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -185,8 +185,8 @@ export default function Contact() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                         Full Name
@@ -216,7 +216,7 @@ export default function Contact() {
                       />
                     </div>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <label className="block text-sm text-dark-300 mb-2.5 font-medium">
                         Phone
@@ -308,7 +308,7 @@ export default function Contact() {
           </AnimatedSection>
 
           {/* Sidebar - Business Hours + CTA */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-10">
             <AnimatedSection delay={0.4} direction="right">
               <div className="glass rounded-2xl p-8 lg:p-9">
                 <h3 className="text-lg font-semibold text-white mb-6">

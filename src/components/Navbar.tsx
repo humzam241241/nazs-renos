@@ -1,8 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+
+const TOTAL_FRAMES = 60;
+function getFrameSrc(index: number): string {
+  return `/frames/frame_${String(index).padStart(3, "0")}.jpg`;
+}
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -16,14 +21,34 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentFrame, setCurrentFrame] = useState(1);
+  const frameRef = useRef(1);
+
+  // Preload all frames
+  useEffect(() => {
+    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+      const img = new window.Image();
+      img.src = getFrameSrc(i);
+    }
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 50);
+
+    // Map full page scroll to frame number
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.max(0, Math.min(1, window.scrollY / scrollHeight));
+    const frame = Math.max(1, Math.min(TOTAL_FRAMES, Math.ceil(progress * TOTAL_FRAMES)));
+    if (frame !== frameRef.current) {
+      frameRef.current = frame;
+      setCurrentFrame(frame);
+    }
+  }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   useEffect(() => {
     if (isOpen) {
@@ -57,8 +82,8 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+          <div className="flex items-center justify-between h-24">
+            {/* Logo with scroll-driven video animation */}
             <a
               href="#home"
               onClick={(e) => {
@@ -67,13 +92,16 @@ export default function Navbar() {
               }}
               className="relative z-10 flex items-center gap-3"
             >
-              <Image
-                src="/logo/naz-logo-icon.png"
-                alt="NAZ Solutions"
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
-              />
+              <div className="w-[72px] h-[72px] lg:w-[120px] lg:h-[120px] rounded-2xl overflow-hidden flex-shrink-0 border border-white/10 shadow-lg shadow-black/30">
+                <Image
+                  src={getFrameSrc(currentFrame)}
+                  alt="NAZ Solutions"
+                  width={120}
+                  height={120}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
               <div>
                 <span className="text-lg font-semibold tracking-tight text-white">
                   NAZ

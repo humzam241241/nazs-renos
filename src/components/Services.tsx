@@ -108,13 +108,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-32 lg:py-40">
+    <section id="services" className="relative py-40 lg:py-52">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-24">
           <AnimatedSection>
             <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
               What We Do
@@ -134,9 +134,9 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
           {services.map((service, i) => (
-            <AnimatedSection key={service.title} delay={0.1 + i * 0.08}>
+            <AnimatedSection key={service.title} delay={0.1 + i * 0.08} className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]">
               <div className="glass rounded-2xl p-8 lg:p-9 h-full group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] cursor-default">
                 <div className="w-14 h-14 rounded-2xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 group-hover:bg-gold-500/15 transition-all duration-500">
                   {service.icon}

@@ -67,14 +67,14 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-32 lg:py-40 overflow-hidden"
+      className="relative py-40 lg:py-52 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/30 to-dark-950 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-500/[0.02] rounded-full blur-[150px] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <AnimatedSection>
             <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
               Testimonials
