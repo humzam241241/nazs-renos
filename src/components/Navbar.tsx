@@ -1,13 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
-const TOTAL_FRAMES = 60;
-function getFrameSrc(index: number): string {
-  return `/frames/frame_${String(index).padStart(3, "0")}.jpg`;
-}
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -21,38 +16,10 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [currentFrame, setCurrentFrame] = useState(1);
-  const frameRef = useRef(1);
-
-  // Preload all frames
-  useEffect(() => {
-    for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      const img = new window.Image();
-      img.src = getFrameSrc(i);
-    }
-  }, []);
 
   useEffect(() => {
-    let ticking = false;
-
     const onScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 50);
-
-          // 1:1 proportional - full page scroll = full 60 frames
-          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = Math.max(0, Math.min(1, window.scrollY / scrollHeight));
-          const frame = Math.max(1, Math.min(TOTAL_FRAMES, Math.ceil(progress * TOTAL_FRAMES)));
-          if (frame !== frameRef.current) {
-            frameRef.current = frame;
-            setCurrentFrame(frame);
-          }
-
-          ticking = false;
-        });
-        ticking = true;
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -92,33 +59,23 @@ export default function Navbar() {
       >
         <div className="max-w-5xl mx-auto px-8 md:px-12 lg:px-16">
           <div className="flex items-center justify-between h-24">
-            {/* Logo with scroll-driven video animation */}
+            {/* Logo */}
             <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick("#home");
               }}
-              className="relative z-10 flex items-center gap-3"
+              className="relative z-10 flex-shrink-0"
             >
-              <div className="w-[72px] h-[72px] lg:w-[120px] lg:h-[120px] rounded-2xl overflow-hidden flex-shrink-0 border border-white/10 shadow-lg shadow-black/30">
-                <Image
-                  src={getFrameSrc(currentFrame)}
-                  alt="NAZ Solutions"
-                  width={120}
-                  height={120}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
-              <div>
-                <span className="text-lg font-semibold tracking-tight text-white">
-                  NAZ
-                </span>
-                <span className="text-lg font-semibold tracking-tight gradient-text ml-1">
-                  SOLUTIONS
-                </span>
-              </div>
+              <Image
+                src="/logo/naz-logo-new.png"
+                alt="NAZ Solutions"
+                width={180}
+                height={120}
+                className="w-[120px] lg:w-[160px] h-auto object-contain"
+                priority
+              />
             </a>
 
             {/* Desktop Nav */}

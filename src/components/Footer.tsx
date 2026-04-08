@@ -70,22 +70,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
           {/* Brand */}
           <AnimatedSection className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="mb-6">
               <Image
-                src="/logo/naz-logo-icon.png"
+                src="/logo/naz-logo-new.png"
                 alt="NAZ Solutions"
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
+                width={160}
+                height={107}
+                className="w-[140px] h-auto object-contain"
               />
-              <div>
-                <span className="text-lg font-semibold text-white">
-                  NAZ
-                </span>
-                <span className="text-lg font-semibold gradient-text ml-1">
-                  SOLUTIONS
-                </span>
-              </div>
             </div>
             <p className="text-sm text-dark-400 leading-relaxed mb-4 max-w-xs">
               No Jobs Too Big, No Issue Too Small.
