@@ -16,7 +16,7 @@ export default function About() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold-600/[0.02] rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-8 md:px-12 lg:px-16">
         {/* Centered header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <AnimatedSection>

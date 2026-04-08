@@ -32,24 +32,32 @@ export default function Navbar() {
     }
   }, []);
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 50);
-
-    // Map first 30% of page scroll to all 60 frames (faster animation)
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const rawProgress = window.scrollY / scrollHeight;
-    const progress = Math.max(0, Math.min(1, rawProgress / 0.3));
-    const frame = Math.max(1, Math.min(TOTAL_FRAMES, Math.ceil(progress * TOTAL_FRAMES)));
-    if (frame !== frameRef.current) {
-      frameRef.current = frame;
-      setCurrentFrame(frame);
-    }
-  }, []);
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+
+          // 1:1 proportional - full page scroll = full 60 frames
+          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = Math.max(0, Math.min(1, window.scrollY / scrollHeight));
+          const frame = Math.max(1, Math.min(TOTAL_FRAMES, Math.ceil(progress * TOTAL_FRAMES)));
+          if (frame !== frameRef.current) {
+            frameRef.current = frame;
+            setCurrentFrame(frame);
+          }
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -82,7 +90,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-8 md:px-12 lg:px-16">
           <div className="flex items-center justify-between h-24">
             {/* Logo with scroll-driven video animation */}
             <a

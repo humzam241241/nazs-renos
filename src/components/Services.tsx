@@ -112,7 +112,7 @@ export default function Services() {
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950 pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-5xl mx-auto px-8 md:px-12 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-24">
           <AnimatedSection>
