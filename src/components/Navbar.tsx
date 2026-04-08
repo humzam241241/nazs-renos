@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -66,9 +67,13 @@ export default function Navbar() {
               }}
               className="relative z-10 flex items-center gap-3"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
-                <span className="text-dark-950 font-bold text-lg">N</span>
-              </div>
+              <Image
+                src="/logo/naz-logo-icon.png"
+                alt="NAZ Solutions"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <span className="text-lg font-semibold tracking-tight text-white">
                   NAZ

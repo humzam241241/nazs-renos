@@ -6,22 +6,22 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "https://picsum.photos/id/49/1920/1080",
+    image: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=1920&q=80",
     title: "Luxury Kitchen\nTransformations",
     subtitle: "Crafting culinary spaces that inspire and delight",
   },
   {
-    image: "https://picsum.photos/id/164/1920/1080",
+    image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1920&q=80",
     title: "Modern Bathroom\nRedesigns",
     subtitle: "Spa-like retreats tailored to your lifestyle",
   },
   {
-    image: "https://picsum.photos/id/259/1920/1080",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80",
     title: "Complete Home\nSolutions",
     subtitle: "Transforming visions into architectural masterpieces",
   },
   {
-    image: "https://picsum.photos/id/188/1920/1080",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80",
     title: "Premium Basement\nFinishing",
     subtitle: "Unlocking your home's hidden potential",
   },

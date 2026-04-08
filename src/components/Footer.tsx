@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
 const footerLinks = {
@@ -70,9 +71,13 @@ export default function Footer() {
           {/* Brand */}
           <AnimatedSection className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center">
-                <span className="text-dark-950 font-bold text-lg">N</span>
-              </div>
+              <Image
+                src="/logo/naz-logo-icon.png"
+                alt="NAZ Solutions"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
+              />
               <div>
                 <span className="text-lg font-semibold text-white">
                   NAZ

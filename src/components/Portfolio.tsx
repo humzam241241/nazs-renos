@@ -4,25 +4,25 @@ import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 
 const portfolioImages = [
-  { src: "https://picsum.photos/id/42/600/400", alt: "Modern kitchen renovation" },
-  { src: "https://picsum.photos/id/37/600/400", alt: "Luxury bathroom remodel" },
-  { src: "https://picsum.photos/id/49/600/400", alt: "Open concept living space" },
-  { src: "https://picsum.photos/id/164/600/400", alt: "Custom home office" },
-  { src: "https://picsum.photos/id/188/600/400", alt: "Finished basement lounge" },
-  { src: "https://picsum.photos/id/259/600/400", alt: "Outdoor living area" },
-  { src: "https://picsum.photos/id/274/600/400", alt: "Master bedroom suite" },
-  { src: "https://picsum.photos/id/308/600/400", alt: "Custom walk-in closet" },
+  { src: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=600&h=400&q=80", alt: "Modern kitchen renovation" },
+  { src: "https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=600&h=400&q=80", alt: "Luxury bathroom remodel" },
+  { src: "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=600&h=400&q=80", alt: "Open concept living space" },
+  { src: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&h=400&q=80", alt: "Custom home office" },
+  { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&h=400&q=80", alt: "Finished basement lounge" },
+  { src: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=600&h=400&q=80", alt: "Outdoor living area" },
+  { src: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=600&h=400&q=80", alt: "Master bedroom suite" },
+  { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&h=400&q=80", alt: "Custom walk-in closet" },
 ];
 
 const portfolioImagesRow2 = [
-  { src: "https://picsum.photos/id/316/600/400", alt: "Wine cellar design" },
-  { src: "https://picsum.photos/id/342/600/400", alt: "Home theater build" },
-  { src: "https://picsum.photos/id/356/600/400", alt: "Gourmet kitchen" },
-  { src: "https://picsum.photos/id/366/600/400", alt: "Spa bathroom" },
-  { src: "https://picsum.photos/id/399/600/400", alt: "Modern staircase" },
-  { src: "https://picsum.photos/id/401/600/400", alt: "Fireplace redesign" },
-  { src: "https://picsum.photos/id/416/600/400", alt: "Outdoor kitchen" },
-  { src: "https://picsum.photos/id/429/600/400", alt: "Mudroom renovation" },
+  { src: "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=600&h=400&q=80", alt: "Wine cellar design" },
+  { src: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=600&h=400&q=80", alt: "Home theater build" },
+  { src: "https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=600&h=400&q=80", alt: "Gourmet kitchen" },
+  { src: "https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=600&h=400&q=80", alt: "Spa bathroom" },
+  { src: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=600&h=400&q=80", alt: "Modern staircase" },
+  { src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&h=400&q=80", alt: "Fireplace redesign" },
+  { src: "https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?auto=format&fit=crop&w=600&h=400&q=80", alt: "Outdoor kitchen" },
+  { src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=600&h=400&q=80", alt: "Mudroom renovation" },
 ];
 
 function CarouselRow({
