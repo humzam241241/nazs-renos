@@ -76,12 +76,12 @@ export default function Testimonials() {
       <div className="relative max-w-5xl mx-auto px-8 md:px-12 lg:px-16">
         <div className="text-center mb-20">
           <AnimatedSection>
-            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-6">
               Testimonials
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
               Client <span className="gradient-text">Stories</span>
             </h2>
           </AnimatedSection>

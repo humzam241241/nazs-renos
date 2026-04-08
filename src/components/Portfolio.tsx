@@ -72,12 +72,12 @@ export default function Portfolio() {
       <div className="max-w-5xl mx-auto px-8 md:px-12 lg:px-16 mb-16">
         <div className="text-center">
           <AnimatedSection>
-            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-6">
               Our Work
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
               Featured <span className="gradient-text">Portfolio</span>
             </h2>
           </AnimatedSection>

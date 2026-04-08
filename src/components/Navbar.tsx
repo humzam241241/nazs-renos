@@ -122,7 +122,7 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}

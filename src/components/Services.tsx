@@ -116,12 +116,12 @@ export default function Services() {
         {/* Section Header */}
         <div className="text-center mb-24">
           <AnimatedSection>
-            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-6">
               What We Do
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
               Our <span className="gradient-text">Services</span>
             </h2>
           </AnimatedSection>
@@ -144,7 +144,7 @@ export default function Services() {
               <div className="glass rounded-2xl p-8 lg:p-10 h-full group hover:border-gold-500/20 transition-all duration-500 hover:bg-white/[0.04] cursor-default relative overflow-hidden">
                 {/* Subtle gold glow on hover */}
                 <div className="absolute -top-12 -right-12 w-32 h-32 bg-gold-500/0 group-hover:bg-gold-500/[0.06] rounded-full blur-2xl transition-all duration-700" />
-                <div className="relative">
+                <div className="relative text-center flex flex-col items-center">
                   <div className="w-14 h-14 rounded-2xl bg-gold-500/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 group-hover:bg-gold-500/15 transition-all duration-500">
                     {service.icon}
                   </div>

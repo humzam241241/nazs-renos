@@ -110,12 +110,12 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center mb-20 lg:mb-28">
           <AnimatedSection>
-            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-5">
+            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-6">
               Get in Touch
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-10">
               Start Your <span className="gradient-text">Project</span>
             </h2>
           </AnimatedSection>

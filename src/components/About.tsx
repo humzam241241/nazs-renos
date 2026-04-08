@@ -20,12 +20,12 @@ export default function About() {
         {/* Centered header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <AnimatedSection>
-            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            <p className="text-gold-400 text-sm font-medium tracking-[0.2em] uppercase mb-6">
               About Us
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.05] mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.05] mb-10">
               Building dreams
               <br />
               with{" "}
