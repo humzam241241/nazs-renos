@@ -64,7 +64,7 @@ export default function RootLayout({
       <body className="noise-overlay">
         {children}
         <script
-          src="https://chattybot-tawny.vercel.app/widget.js?v=1775659976430"
+          src="https://chattybot-widget.vercel.app/widget.js?v=1775659976430"
           data-site-id="5e99d1c9-bc6b-49bc-9680-cef071994b91"
           data-api-url="https://chattybot-0jvh.onrender.com"
           async
